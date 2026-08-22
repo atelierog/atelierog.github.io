@@ -9,30 +9,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (menuButton && nav) {
     menuButton.addEventListener("click", function () {
-      const isOpen = nav.classList.toggle("open");
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        isOpen ? "true" : "false"
-      );
-
-      menuButton.setAttribute(
-        "aria-label",
-        isOpen ? "Close menu" : "Open menu"
-      );
+      nav.classList.toggle("open");
     });
 
     nav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
         nav.classList.remove("open");
-        menuButton.setAttribute("aria-expanded", "false");
       });
     });
   }
 
 
   /* =========================
-     COPYRIGHT YEAR
+     YEAR
   ========================= */
 
   const year = document.getElementById("year");
@@ -43,14 +32,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =========================
-     EMAILJS
+     EMAILJS SETUP
   ========================= */
 
-  const EMAILJS_PUBLIC_KEY = "tisfWARykoKp6CDyf";
-  const EMAILJS_SERVICE_ID = "service_i7vdsrr";
+  const PUBLIC_KEY = "tisfWARykoKp6CDyf";
+  const SERVICE_ID = "service_i7vdsrr";
 
-  const ADMIN_TEMPLATE_ID = "template_itx7vmu";
-  const CUSTOMER_TEMPLATE_ID = "template_apr6ncq";
+  const ADMIN_TEMPLATE = "template_itx7vmu";
+  const CUSTOMER_TEMPLATE = "template_apr6ncq";
+
+
+  if (typeof emailjs !== "undefined") {
+
+    emailjs.init({
+      publicKey: PUBLIC_KEY
+    });
+
+    console.log("Atelier OG: EmailJS initialized.");
+
+  } else {
+
+    console.error("Atelier OG: EmailJS library not loaded.");
+
+  }
 
 
   /* =========================
@@ -58,311 +62,299 @@ document.addEventListener("DOMContentLoaded", function () {
   ========================= */
 
   const modal = document.getElementById("quoteModal");
-  const quoteForm = document.getElementById("quoteForm");
-  const selectedPackage = document.getElementById("selectedPackage");
-  const formStatus = document.getElementById("formStatus");
+  const form = document.getElementById("quoteForm");
+  const selectedPackage =
+    document.getElementById("selectedPackage");
 
-  if (!modal || !quoteForm) {
-    console.log("Atelier OG: quotation form not found.");
+  const status =
+    document.getElementById("formStatus");
+
+
+  if (!modal || !form) {
+
+    console.error(
+      "Atelier OG: quoteModal or quoteForm not found."
+    );
+
     return;
   }
 
 
   /* =========================
-     OPEN QUOTATION
+     PACKAGE BUTTONS
   ========================= */
 
-  const packageButtons =
-    document.querySelectorAll(".package-card");
+  document
+    .querySelectorAll(".package-card")
+    .forEach(function (button) {
 
-  packageButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
 
-    button.addEventListener("click", function () {
+        const service =
+          button.dataset.service || "";
 
-      const service =
-        button.getAttribute("data-service") || "";
+        const packageName =
+          button.dataset.package || "";
 
-      const packageName =
-        button.getAttribute("data-package") || "";
+        const price =
+          button.dataset.price || "";
 
-      const price =
-        button.getAttribute("data-price") || "";
-
-      const conditions =
-        button.getAttribute("data-conditions") || "";
-
-
-      document.getElementById("quoteService").value = service;
-
-      document.getElementById("quotePackage").value =
-        packageName;
-
-      document.getElementById("quotePrice").value =
-        price;
-
-      document.getElementById("quoteConditions").value =
-        conditions;
+        const conditions =
+          button.dataset.conditions || "";
 
 
-      selectedPackage.innerHTML =
+        document.getElementById(
+          "quoteService"
+        ).value = service;
 
-        "<strong>" +
-        service +
-        "</strong>" +
+        document.getElementById(
+          "quotePackage"
+        ).value = packageName;
 
-        "<div>" +
-        packageName +
-        " · <span>₹" +
-        price +
-        "</span></div>" +
+        document.getElementById(
+          "quotePrice"
+        ).value = price;
 
-        "<small>" +
-        conditions +
-        "</small>";
-
-
-      formStatus.textContent = "";
-
-      modal.classList.add("open");
-
-      modal.setAttribute(
-        "aria-hidden",
-        "false"
-      );
-
-      document.body.style.overflow = "hidden";
+        document.getElementById(
+          "quoteConditions"
+        ).value = conditions;
 
 
-      const nameInput =
-        quoteForm.querySelector(
-          'input[name="name"]'
-        );
+        if (selectedPackage) {
 
-      if (nameInput) {
-        setTimeout(function () {
-          nameInput.focus();
-        }, 100);
-      }
+          selectedPackage.innerHTML = `
+            <strong>${service}</strong>
+            <div>
+              ${packageName} · ₹${price}
+            </div>
+            <small>
+              ${conditions}
+            </small>
+          `;
+
+        }
+
+
+        if (status) {
+          status.textContent = "";
+          status.className = "form-status";
+        }
+
+
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+
+        document.body.style.overflow = "hidden";
+
+      });
 
     });
 
-  });
+
+  /* =========================
+     CLOSE MODAL
+  ========================= */
+
+  document
+    .querySelectorAll("[data-close-quote]")
+    .forEach(function (button) {
+
+      button.addEventListener("click", function () {
+
+        modal.classList.remove("open");
+
+        modal.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+        document.body.style.overflow = "";
+
+      });
+
+    });
 
 
   /* =========================
-     CLOSE QUOTATION
+     SEND FORM
   ========================= */
 
-  const closeButtons =
-    document.querySelectorAll(
-      "[data-close-quote]"
-    );
+  form.addEventListener("submit", function (event) {
 
-  closeButtons.forEach(function (button) {
-
-    button.addEventListener(
-      "click",
-      function () {
-
-        modal.classList.remove("open");
-
-        modal.setAttribute(
-          "aria-hidden",
-          "true"
-        );
-
-        document.body.style.overflow = "";
-
-      }
-    );
-
-  });
+    event.preventDefault();
 
 
-  /* ESCAPE KEY */
+    if (typeof emailjs === "undefined") {
 
-  document.addEventListener(
-    "keydown",
-    function (event) {
+      status.textContent =
+        "Email service is not loaded. Please refresh the page.";
 
-      if (
-        event.key === "Escape" &&
-        modal.classList.contains("open")
-      ) {
+      status.className =
+        "form-status error";
 
-        modal.classList.remove("open");
-
-        modal.setAttribute(
-          "aria-hidden",
-          "true"
-        );
-
-        document.body.style.overflow = "";
-
-      }
+      return;
 
     }
-  );
 
 
-  /* =========================
-     FORM SUBMISSION
-  ========================= */
-
-  quoteForm.addEventListener(
-    "submit",
-    function (event) {
-
-      event.preventDefault();
-
-
-      /* Check EmailJS */
-
-      if (
-        typeof emailjs === "undefined"
-      ) {
-
-        formStatus.textContent =
-          "Email service is not loaded. Please refresh the page and try again.";
-
-        formStatus.className =
-          "form-status error";
-
-        return;
-
-      }
-
-
-      const submitButton =
-        quoteForm.querySelector(
-          'button[type="submit"]'
-        );
-
-
-      if (submitButton) {
-
-        submitButton.disabled = true;
-
-        submitButton.textContent =
-          "Sending...";
-
-      }
-
-
-      formStatus.textContent = "";
-
-
-      /* Collect form data */
-
-      const formData =
-        new FormData(quoteForm);
-
-      const data = {};
-
-      formData.forEach(
-        function (value, key) {
-
-          data[key] = value;
-
-        }
+    const button =
+      form.querySelector(
+        'button[type="submit"]'
       );
 
 
-      /* Generate quotation ID */
+    if (button) {
 
-      data.quote_id =
-        "AOG-" +
-        Date.now();
+      button.disabled = true;
 
-
-      /* =========================
-         SEND EMAILS
-      ========================= */
-
-      emailjs
-        .send(
-          EMAILJS_SERVICE_ID,
-          ADMIN_TEMPLATE_ID,
-          data
-        )
-
-        .then(function () {
-
-          return emailjs.send(
-            EMAILJS_SERVICE_ID,
-            CUSTOMER_TEMPLATE_ID,
-            data
-          );
-
-        })
-
-        .then(function () {
-
-          formStatus.textContent =
-            "Success! Your quotation has been sent to your email.";
-
-          formStatus.className =
-            "form-status success";
-
-
-          quoteForm.reset();
-
-
-          if (submitButton) {
-
-            submitButton.disabled = false;
-
-            submitButton.textContent =
-              "Send Quotation Request →";
-
-          }
-
-
-          setTimeout(
-            function () {
-
-              modal.classList.remove("open");
-
-              modal.setAttribute(
-                "aria-hidden",
-                "true"
-              );
-
-              document.body.style.overflow = "";
-
-            },
-            3000
-          );
-
-        })
-
-        .catch(function (error) {
-
-          console.error(
-            "EmailJS Error:",
-            error
-          );
-
-
-          formStatus.textContent =
-            "Something went wrong. Please try again.";
-
-          formStatus.className =
-            "form-status error";
-
-
-          if (submitButton) {
-
-            submitButton.disabled = false;
-
-            submitButton.textContent =
-              "Send Quotation Request →";
-
-          }
-
-        });
+      button.textContent =
+        "SENDING...";
 
     }
-  );
+
+
+    status.textContent =
+      "Sending your quotation...";
+
+    status.className =
+      "form-status";
+
+
+    /* =========================
+       COLLECT DATA
+    ========================= */
+
+    const formData =
+      new FormData(form);
+
+    const params = {};
+
+
+    formData.forEach(function (value, key) {
+
+      params[key] = value;
+
+    });
+
+
+    /* =========================
+       QUOTATION NUMBER
+    ========================= */
+
+    params.quote_id =
+      "AOG-" +
+      new Date().getFullYear() +
+      "-" +
+      Math.floor(
+        100000 + Math.random() * 900000
+      );
+
+
+    console.log(
+      "Sending Atelier OG quotation:",
+      params
+    );
+
+
+    /* =========================
+       SEND TO ATELIER OG
+    ========================= */
+
+    emailjs
+      .send(
+        SERVICE_ID,
+        ADMIN_TEMPLATE,
+        params
+      )
+
+      .then(function (response) {
+
+        console.log(
+          "Admin email sent:",
+          response
+        );
+
+
+        /* =========================
+           SEND TO CUSTOMER
+        ========================= */
+
+        return emailjs.send(
+          SERVICE_ID,
+          CUSTOMER_TEMPLATE,
+          params
+        );
+
+      })
+
+      .then(function (response) {
+
+        console.log(
+          "Customer email sent:",
+          response
+        );
+
+
+        status.textContent =
+          "Quotation sent successfully! Check your email.";
+
+        status.className =
+          "form-status success";
+
+
+        if (button) {
+
+          button.disabled = false;
+
+          button.textContent =
+            "SEND QUOTATION REQUEST →";
+
+        }
+
+
+        setTimeout(function () {
+
+          form.reset();
+
+          modal.classList.remove("open");
+
+          modal.setAttribute(
+            "aria-hidden",
+            "true"
+          );
+
+          document.body.style.overflow = "";
+
+        }, 3000);
+
+      })
+
+      .catch(function (error) {
+
+        console.error(
+          "EMAILJS ERROR:",
+          error
+        );
+
+
+        status.textContent =
+          "Email could not be sent. Please try again.";
+
+        status.className =
+          "form-status error";
+
+
+        if (button) {
+
+          button.disabled = false;
+
+          button.textContent =
+            "SEND QUOTATION REQUEST →";
+
+        }
+
+      });
+
+  });
 
 });
