@@ -140,3 +140,34 @@
   .about-inner h2{font-size:44px}
   .contact-section h2{font-size:46px}
 }
+/* HERO BRAND */
+
+.hero .hero-brand {
+    font-size: clamp(48px, 5.5vw, 70px);
+    line-height: 1;
+    letter-spacing: -2px;
+    font-weight: 800;
+    color: var(--white);
+}
+
+.hero .hero-brand span {
+    color: var(--gold);
+}
+
+.hero .hero-tagline {
+    font-size: clamp(22px, 2.8vw, 38px);
+    line-height: 1.08;
+    letter-spacing: -0.8px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+@media (max-width:680px) {
+    .hero .hero-brand {
+        font-size: clamp(40px, 10vw, 54px);
+    }
+
+    .hero .hero-tagline {
+        font-size: clamp(20px, 6vw, 30px);
+    }
+}
