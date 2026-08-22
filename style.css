@@ -79,3 +79,136 @@
   .hero-art{opacity:1;}
   .hero-art img{opacity:1;}
 }
+/* =========================
+   TYPOGRAPHY + HERO BALANCE
+========================= */
+
+/* BIGGER AOG LOGO */
+.hero-art {
+  width: min(760px, 62vw);
+  right: -3vw;
+  opacity: 1;
+}
+
+.hero-art img {
+  inset: 4%;
+  width: 92%;
+  height: 92%;
+  opacity: 1;
+  object-fit: contain;
+
+  /* subtle 3D depth */
+  filter:
+    drop-shadow(0 8px 10px rgba(0,0,0,.65))
+    drop-shadow(0 0 2px rgba(224,199,127,.45));
+}
+
+
+/* SMALLER MAIN HERO HEADING */
+.hero h1 {
+  font-size: clamp(40px, 5.3vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -1.8px;
+}
+
+
+/* ATELIER OG LABEL — A LITTLE MORE VISIBLE */
+.hero .eyebrow {
+  font-size: 11px;
+  letter-spacing: 4.5px;
+  margin-bottom: 15px;
+}
+
+
+/* SUPPORTING HERO TEXT */
+.hero-copy {
+  font-size: clamp(15px, 1.5vw, 17px);
+  line-height: 1.6;
+}
+
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+/* SERVICES */
+.section-heading h2 {
+  font-size: clamp(34px, 4.2vw, 54px);
+  line-height: 1.08;
+}
+
+
+/* ABOUT */
+.about-inner h2 {
+  font-size: clamp(36px, 4.6vw, 62px);
+  line-height: 1.06;
+}
+
+
+/* CONTACT */
+.contact-section h2 {
+  font-size: clamp(38px, 5vw, 66px);
+  line-height: 1.05;
+}
+
+
+/* SMALL SECTION LABELS */
+.services-section .eyebrow,
+.work-section .eyebrow,
+.about-section .eyebrow,
+.contact-section .eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+}
+
+
+/* SECTION DESCRIPTION TEXT */
+.section-intro,
+.about-inner > p:last-child,
+.contact-copy {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 680px) {
+
+  .hero h1 {
+    font-size: clamp(36px, 10vw, 52px);
+    line-height: 1.03;
+  }
+
+  .hero-art {
+    width: 92vw;
+    right: -115px;
+    opacity: 1;
+  }
+
+  .hero-art img {
+    opacity: 1;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(32px, 9vw, 44px);
+  }
+
+  .about-inner h2 {
+    font-size: clamp(34px, 9vw, 48px);
+  }
+
+  .contact-section h2 {
+    font-size: clamp(36px, 10vw, 52px);
+  }
+
+  .services-section .eyebrow,
+  .work-section .eyebrow,
+  .about-section .eyebrow,
+  .contact-section .eyebrow {
+    font-size: 10px;
+    letter-spacing: 3.5px;
+  }
+}
