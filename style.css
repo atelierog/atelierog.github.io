@@ -20,6 +20,35 @@
 }
 .hero h1{max-width:680px}
 .hero-copy{max-width:500px;margin:20px 0 26px}
+/* HERO BRAND HIERARCHY */
+.hero .brand-heading {
+    font-size: clamp(48px, 5.5vw, 70px);
+    line-height: 1;
+    letter-spacing: -2px;
+    font-weight: 800;
+}
+
+.hero .brand-heading .gold {
+    color: var(--gold);
+}
+
+.hero .hero-tagline {
+    font-size: clamp(22px, 2.8vw, 38px);
+    line-height: 1.08;
+    letter-spacing: -0.8px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+@media (max-width:680px) {
+    .hero .brand-heading {
+        font-size: clamp(40px, 10vw, 54px);
+    }
+
+    .hero .hero-tagline {
+        font-size: clamp(20px, 6vw, 30px);
+    }
+}
 .hero-art{
   right:-2vw;
   width:min(650px,58vw);
