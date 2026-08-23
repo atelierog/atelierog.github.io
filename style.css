@@ -211,3 +211,35 @@
         font-size: clamp(40px, 10.5vw, 54px);
     }
 }
+/* MAIN SECTION H3 SIZE */
+
+.section-heading h3 {
+    font-size: 42px;
+    line-height: 1.08;
+}
+
+.about-inner h3 {
+    font-size: 44px;
+    line-height: 1.06;
+}
+
+.contact-section h3 {
+    font-size: 44px;
+    line-height: 1.06;
+}
+
+/* MOBILE */
+
+@media (max-width: 680px) {
+    .section-heading h3 {
+        font-size: 34px;
+    }
+
+    .about-inner h3 {
+        font-size: 36px;
+    }
+
+    .contact-section h3 {
+        font-size: 36px;
+    }
+}
