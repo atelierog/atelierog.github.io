@@ -241,3 +241,260 @@
 
 /* BUSINESS EXCEL MANAGER */
 .service-item .item-body ul li strong{color:#333}
+
+
+/* =========================================
+   MOBILE USABILITY PATCH — OCT 2026
+   Targeted responsive refinements; preserves
+   the existing Atelier OG visual identity.
+========================================= */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: 76px;
+}
+button,
+input,
+textarea,
+select,
+summary,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+.add-service,
+.quote-controls button,
+.menu-toggle {
+  touch-action: manipulation;
+}
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+@media (max-width: 680px) {
+  .site-header {
+    min-height: 64px;
+  }
+  .nav {
+    top: 64px;
+    padding: 8px 16px max(18px, env(safe-area-inset-bottom));
+    box-shadow: 0 14px 24px rgba(0,0,0,.28);
+  }
+  .nav a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    letter-spacing: 1.4px;
+  }
+  .menu-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 8px;
+  }
+  .hero {
+    min-height: auto;
+    min-height: max(570px, calc(78svh - 64px));
+  }
+  .hero-content {
+    padding-top: clamp(42px, 10vh, 66px);
+    padding-bottom: 56px;
+  }
+  .hero-brand,
+  .hero .hero-brand {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+  .hero-tagline,
+  .hero .hero-tagline {
+    max-width: 14ch;
+    text-wrap: balance;
+  }
+  .hero-copy {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .actions {
+    gap: 12px;
+  }
+  .actions .button {
+    min-height: 48px;
+    width: 100%;
+    padding: 12px 16px;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .section {
+    padding-top: 62px;
+    padding-bottom: 62px;
+  }
+  .section-heading h2,
+  .about-inner h2,
+  .contact-section h2 {
+    letter-spacing: -1.4px;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+  }
+  .section-intro,
+  .about-inner > p:last-child,
+  .contact-copy {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .service-list summary {
+    gap: 12px;
+    line-height: 1.35;
+  }
+  .service-list summary > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .service-list summary i {
+    flex: 0 0 auto;
+  }
+  .service-content {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .service-item summary {
+    align-items: center;
+    gap: 10px;
+    padding: 12px 12px !important;
+  }
+  .service-item summary > span {
+    min-width: 0;
+    flex: 1;
+  }
+  .service-item summary strong {
+    overflow-wrap: anywhere;
+    line-height: 1.4;
+  }
+  .item-body {
+    padding: 0 12px 16px;
+  }
+  .item-body p,
+  .item-body ul {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+  .item-pricing span {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    line-height: 1.5;
+  }
+  .addon-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+    min-height: 40px;
+    line-height: 1.5;
+  }
+  .addon-option input {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: var(--gold);
+  }
+  .service-qty {
+    min-height: 42px;
+    font-size: 16px;
+  }
+  .add-service {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+    border-radius: 2px;
+  }
+  .quote-builder {
+    padding: 18px 14px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .quote-line {
+    gap: 12px;
+    overflow-wrap: anywhere;
+  }
+  .quote-controls {
+    gap: 10px;
+  }
+  .quote-controls button {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    font-size: 18px;
+  }
+  .quote-controls b {
+    min-width: 0;
+    flex: 1;
+  }
+  .quote-builder > .button {
+    min-height: 48px;
+    font-size: 11px;
+  }
+  .quote-modal {
+    align-items: flex-end;
+    padding: 0;
+  }
+  .quote-dialog {
+    width: 100%;
+    max-height: 92dvh;
+    max-height: 92vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 30px 18px max(22px, env(safe-area-inset-bottom));
+  }
+  .quote-dialog form input,
+  .quote-dialog form textarea {
+    min-height: 46px;
+    font-size: 16px;
+  }
+  .quote-submit {
+    min-height: 48px;
+  }
+  .quote-close {
+    width: 44px;
+    height: 44px;
+    top: 4px;
+    right: 6px;
+  }
+  footer {
+    padding-bottom: max(28px, env(safe-area-inset-bottom));
+    gap: 12px;
+  }
+}
+@media (max-width: 390px) {
+  .hero-brand,
+  .hero .hero-brand {
+    font-size: clamp(40px, 11.5vw, 46px);
+    letter-spacing: -1.8px;
+  }
+  .hero-tagline,
+  .hero .hero-tagline {
+    font-size: clamp(24px, 7vw, 27px);
+  }
+  .section-heading h2 {
+    font-size: clamp(34px, 10vw, 42px);
+  }
+  .about-inner h2 {
+    font-size: clamp(36px, 10vw, 44px);
+  }
+  .contact-section h2 {
+    font-size: clamp(38px, 10.5vw, 46px);
+  }
+  .quote-controls {
+    gap: 7px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
