@@ -241,3 +241,40 @@
 
 /* BUSINESS EXCEL MANAGER */
 .service-item .item-body ul li strong{color:#333}
+
+/* =========================================
+   PRODUCTS + REFINED STUDIO OFFERING
+========================================= */
+.nav a{white-space:nowrap}
+.products-section{background:#0b0b0b;color:var(--white)}
+.products-section .section-intro{color:#a4a4a4}
+.product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:42px}
+.product-card{border:1px solid #292929;background:#101010;min-width:0;display:flex;flex-direction:column}
+.product-visual{min-height:210px;position:relative;overflow:hidden;padding:18px;display:flex;flex-direction:column;justify-content:space-between;background:radial-gradient(circle at 50% 55%,rgba(200,164,90,.16),transparent 55%),#151515}
+.product-kicker,.visual-caption{font-size:8px;letter-spacing:2px;color:#c8a45a;font-weight:700}
+.visual-caption{color:#999}
+.qr-art{width:112px;height:112px;align-self:center;display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:9px;background:#eee;border:5px solid #eee;transform:rotate(-4deg);box-shadow:0 12px 35px #0008}
+.qr-art i{background:#171717;display:block}
+.qr-art i:nth-child(2),.qr-art i:nth-child(4),.qr-art i:nth-child(8){background:transparent;border:5px solid #171717}
+.menu-mock,.gym-mock{align-self:center;width:min(230px,90%);padding:16px;background:#f3f2ee;color:#151515;display:flex;flex-direction:column;gap:7px;box-shadow:0 12px 35px #0008}
+.menu-mock b,.gym-mock b{font-family:Georgia,serif;font-size:19px;letter-spacing:1px}
+.menu-mock span,.gym-mock span{font-size:8px;color:#777}
+.menu-mock i,.gym-mock i{height:23px;background:linear-gradient(90deg,#d7d1c5 35%,#e7e4dd 35%);display:block}
+.gym-mock{background:#151a20;color:#f5f5f5;border:1px solid #4c5258}
+.gym-mock b{color:#e0c77f;font-family:Inter,sans-serif;font-size:14px}
+.gym-mock span{color:#a7b0b8}
+.gym-mock strong{font-size:11px;font-weight:500}
+.gym-mock i{height:13px;background:#343d45}
+.product-copy{padding:22px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
+.product-meta{display:flex;flex-wrap:wrap;gap:9px;align-items:center;justify-content:space-between;width:100%;font-size:8px;letter-spacing:1.1px;color:#aaa}
+.status{font-size:8px;letter-spacing:1px;font-weight:700;padding:5px 7px;border:1px solid #555}
+.status-pilot{color:#e0c77f;border-color:#806b3d}
+.status-build{color:#b9c5d3;border-color:#536171}
+.product-copy h3{font-size:22px;line-height:1.2;margin:18px 0 9px}
+.product-copy>p{font-size:12px;color:#aaa;line-height:1.7}
+.product-copy ul{padding-left:17px;margin:13px 0;color:#ddd;font-size:11px;line-height:1.9}
+.product-copy .product-note{font-size:10px;color:#858585;border-top:1px solid #292929;padding-top:12px;margin-top:auto;width:100%}
+.product-link{display:inline-block;margin-top:17px;color:#e0c77f;font-size:10px;letter-spacing:.7px;font-weight:700}
+.product-link:hover{color:#fff}
+@media(max-width:900px){.product-grid{grid-template-columns:1fr 1fr}.product-card:last-child{grid-column:1/-1}}
+@media(max-width:680px){.product-grid{grid-template-columns:1fr;gap:13px;margin-top:30px}.product-card:last-child{grid-column:auto}.product-visual{min-height:190px}.product-copy{padding:19px}.product-copy h3{font-size:21px}}
