@@ -1,21 +1,112 @@
-const products = [
-  {n:"01",title:"Gym Manager",tag:"SaaS · Operations · Mobile",text:"A mobile-first, multi-tenant gym management product concept for turning membership, attendance, expiry and billing workflows into one operational system.",href:"https://github.com/atelierog/gym-management-system"},
-  {n:"02",title:"Atelier OG / Business OS",tag:"SaaS · Systems · Business",text:"A broader product ecosystem for practical business tools, built around reusable modules, multi-tenancy and operational workflows.",href:"https://github.com/atelierog/atelier-og-digital-menu"},
-  {n:"03",title:"Digital Menu & QR System",tag:"Restaurant · QR · Workflow",text:"A reusable digital menu foundation connecting QR entry, product discovery, ordering workflows and restaurant operations.",href:"https://github.com/atelierog/atelier-og-digital-menu"},
-  {n:"04",title:"AI Requirement-to-Product Advisor",tag:"AI · Conversational UX · Discovery",text:"An AI-native concept where a business describes its problem and the system identifies the need, recommends relevant products, explains the fit and offers alternatives."},
+const services = [
+  { number: "01", title: "Design", description: "Create a clear, consistent digital identity that helps your business look credible and communicate better.", items: ["Brand and business creatives", "Web and landing page design", "Menus, catalogues and marketing assets"] },
+  { number: "02", title: "Excel & Data", description: "Turn scattered information into organised, useful systems that make everyday work easier.", items: ["Excel tools and trackers", "Dashboards and reports", "Data organisation and cleanup"] },
+  { number: "03", title: "Digital Tools", description: "Give customers and teams simpler ways to discover, access and use your business.", items: ["Business websites and digital presence", "QR experiences and digital menus", "Forms, catalogues and customer workflows"] },
+  { number: "04", title: "Business Automation", description: "Reduce repetitive work with connected workflows designed around how your business actually operates.", items: ["Workflow mapping", "Process automation", "Custom business systems"] },
 ];
-const skills = {Product:["Problem framing","Product discovery","Requirements","User flows","MVP definition","SaaS thinking"],AI:["AI-assisted development","Conversational product concepts","AI workflows","Automation","Requirement discovery"],Software:["JavaScript","React","Vite","Node.js","Express","REST APIs"],Data:["PostgreSQL","Supabase","RLS","Excel","Operational data"],Infrastructure:["Cloudflare","Cloudflare Workers","Cloudflare Pages","GitHub"],Design:["UX thinking","Workflow design","Canva","Figma","Prototyping"],Cybersecurity:["SQL Injection","Burp Suite","Kali Linux","Web security"]};
-export default function Home(){return <main>
-<nav className="sticky top-0 z-50 border-b border-white/10 bg-[#08090b]/85 backdrop-blur-xl"><div className="container flex h-16 items-center justify-between"><a href="#home" className="font-semibold tracking-tight">RK<span className="text-[color:var(--accent)]">.</span></a><div className="hidden gap-7 text-sm text-white/70 md:flex"><a href="#work">Work</a><a href="#thinking">Thinking</a><a href="#about">About</a><a href="#build">Build Log</a></div><a href="mailto:atelierog.co@gmail.com" className="rounded-full border border-white/15 px-4 py-2 text-xs font-semibold hover:border-white/30">Contact</a></div></nav>
-<section id="home" className="gridline relative overflow-hidden"><div className="container grid min-h-[720px] items-center gap-14 py-24 lg:grid-cols-[1.15fr_.85fr]"><div className="reveal"><p className="eyebrow mb-5">Product Builder · AI & SaaS · Zero → One</p><h1 className="max-w-4xl text-5xl font-semibold leading-[.98] tracking-[-.055em] sm:text-7xl">I turn real-world problems into <span className="text-[color:var(--accent)]">digital products.</span></h1><p className="mt-8 max-w-2xl text-lg leading-8 text-white/60">I work from problem discovery through requirements, workflows, product design and hands-on implementation — combining customer understanding, AI, SaaS thinking and technical execution.</p><div className="mt-10 flex flex-wrap gap-3"><a href="#work" className="rounded-full bg-white px-6 py-3 text-sm font-bold text-black">Explore my work</a><a href="https://www.linkedin.com/in/rahul-kumar-462078348" className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold">LinkedIn ↗</a><a href="https://github.com/atelierog" className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold">GitHub ↗</a></div></div><div className="card reveal p-6" style={{animationDelay:".15s"}}><div className="mb-8 flex items-center justify-between"><span className="eyebrow">Product loop</span><span className="text-xs text-white/35">01—08</span></div><div className="space-y-2 text-sm">{["Observe","Identify","Understand","Define","Design","Build","Test","Iterate"].map((x,i)=><div key={x} className="flex items-center gap-4 border-b border-white/8 py-3"><span className="w-6 text-xs text-white/30">0{i+1}</span><span>{x}</span><span className="ml-auto text-white/20">→</span></div>)}</div></div></div></section>
-<section id="about" className="container py-28"><div className="grid gap-14 lg:grid-cols-[.65fr_1.35fr]"><div><p className="eyebrow">About</p><h2 className="mt-4 text-4xl font-semibold tracking-tight">Problem-first. Hands-on. Curious.</h2></div><div className="text-lg leading-8 text-white/65"><p>I’m Rahul Kumar, an early-career product builder based in Jamshedpur, India. I’m pursuing a BCA while working as a Retail Gemologist at Titan Company Limited (Tanishq).</p><p className="mt-6">My product work grows from real operational problems: how a gym can replace paper workflows, how a restaurant can run a digital menu and QR experience, or how an AI interface can help a business explain what it needs instead of searching a product catalogue.</p><p className="mt-6">I’m interested in AI products, SaaS, automation, customer-facing digital experiences and zero-to-one product development.</p></div></div></section>
-<section id="work" className="border-y border-white/10 bg-[#0c0e12]"><div className="container py-28"><div className="flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p className="eyebrow">Selected work</p><h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">Products I’ve conceived and built.</h2></div><p className="max-w-md text-sm leading-6 text-white/45">Self-initiated projects and product concepts. No fabricated adoption, revenue or user metrics.</p></div><div className="mt-14 grid gap-5 md:grid-cols-2">{products.map((p)=><article className="card group p-7 transition hover:-translate-y-1 hover:border-white/25" key={p.title}><div className="flex items-center justify-between"><span className="text-xs text-white/25">{p.n}</span><span className="rounded-full border border-white/10 px-3 py-1 text-[10px] uppercase tracking-wider text-white/45">{p.tag}</span></div><h3 className="mt-12 text-2xl font-semibold">{p.title}</h3><p className="mt-4 min-h-20 leading-7 text-white/55">{p.text}</p>{p.href&&<a href={p.href} className="mt-8 inline-block text-sm font-semibold text-[color:var(--accent)]">View repository ↗</a>}</article>)}</div></div></section>
-<section id="thinking" className="container py-28"><div className="grid gap-14 lg:grid-cols-[.7fr_1.3fr]"><div><p className="eyebrow">Product thinking</p><h2 className="mt-4 text-4xl font-semibold tracking-tight">I build from problems, not features.</h2><p className="mt-5 leading-7 text-white/50">The same loop shows up across my work: understand what is happening, define the real problem, then build the smallest useful system.</p></div><div className="grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 sm:grid-cols-2">{[["01","Observe","What is happening?"],["02","Identify","What is actually broken?"],["03","Understand","Who experiences it?"],["04","Define","What should the product solve?"],["05","Design","What should the workflow be?"],["06","Build","Can we make it real?"],["07","Test","Does the solution make sense?"],["08","Iterate","What should change?"]].map(x=><div key={x[0]} className="bg-[#0d0f13] p-6"><span className="text-xs text-white/25">{x[0]}</span><h3 className="mt-5 font-semibold">{x[1]}</h3><p className="mt-2 text-sm text-white/45">{x[2]}</p></div>)}</div></div></section>
-<section className="border-y border-white/10 bg-[#0c0e12]"><div className="container py-28"><p className="eyebrow">Case study lens</p><h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">Every serious project follows the evidence.</h2><div className="mt-12 grid gap-3 sm:grid-cols-3 lg:grid-cols-5">{["Problem","User & Context","Product Hypothesis","Workflow & Architecture","Build & Learn"].map((x,i)=><div className="card p-5" key={x}><span className="text-xs text-white/25">0{i+1}</span><h3 className="mt-8 text-sm font-semibold">{x}</h3></div>)}</div><p className="mt-8 max-w-3xl text-sm leading-7 text-white/45">Detailed case studies will expand each project into context, pain points, goals, non-goals, user journey, information architecture, feature decisions, technical/data architecture, trade-offs, MVP scope, implementation and learnings.</p></div></section>
-<section id="experience" className="container py-28"><div className="grid gap-14 lg:grid-cols-[.7fr_1.3fr]"><div><p className="eyebrow">Experience</p><h2 className="mt-4 text-4xl font-semibold tracking-tight">Real users. Real operations.</h2></div><div className="space-y-5"><article className="card p-7"><div className="flex flex-wrap justify-between gap-3"><div><h3 className="text-xl font-semibold">Retail Gemologist — Tanishq / Titan Company Limited</h3><p className="mt-1 text-sm text-white/45">Apr 2026 — Present · Jamshedpur</p></div><span className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/45">Customer · Operations · Product exposure</span></div><p className="mt-6 leading-7 text-white/55">Customer-facing retail work with exposure to diamond expertise, DXC demonstrations, customer education and operational workflows. Tools and processes include Carat Meter, Clarity Viewer, Marking Viewer, LightScope and H&A loupe.</p></article><article className="card p-7"><h3 className="text-xl font-semibold">Retail Sales Officer — Tanishq</h3><p className="mt-1 text-sm text-white/45">Apr 2025 — Mar 2026</p><p className="mt-6 leading-7 text-white/55">Built practical experience in customer handling, retail operations, product communication and translating customer needs into relevant solutions.</p></article></div></div></section>
-<section id="skills" className="border-y border-white/10 bg-[#0c0e12]"><div className="container py-28"><p className="eyebrow">Toolkit</p><h2 className="mt-4 text-4xl font-semibold tracking-tight">Product + technology + business.</h2><div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{Object.entries(skills).map(([k,v])=><div className="card p-6" key={k}><h3 className="font-semibold">{k}</h3><div className="mt-5 flex flex-wrap gap-2">{v.map(s=><span key={s} className="rounded-full bg-white/5 px-3 py-1.5 text-xs text-white/55">{s}</span>)}</div></div>)}</div></div></section>
-<section id="build" className="container py-28"><div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between"><div><p className="eyebrow">Build log</p><h2 className="mt-4 text-4xl font-semibold tracking-tight">What I’m building around now.</h2></div><a href="https://github.com/atelierog" className="text-sm font-semibold text-[color:var(--accent)]">Open GitHub ↗</a></div><div className="mt-12 space-y-3">{[["SEP 2026","AI Product Advisor","Conversational requirement discovery concept"],["SEP 2026","Gym Manager","Multi-tenant SaaS architecture and operational workflows"],["SEP 2026","Atelier OG / Business OS","Reusable business-product ecosystem"],["AUG 2026","Digital Menu","Supabase + Cloudflare implementation"],["JUL 2026","Tanishq / DXC","Customer education and QR/review workflow" ]].map(x=><div className="grid gap-2 border-b border-white/10 py-5 sm:grid-cols-[120px_1fr_1.5fr]" key={x[1]}><span className="text-xs text-white/30">{x[0]}</span><strong>{x[1]}</strong><span className="text-sm text-white/45">{x[2]}</span></div>)}</div></section>
-<section className="border-t border-white/10 bg-[#0c0e12]"><div className="container py-28"><div className="grid gap-10 lg:grid-cols-[1fr_.7fr]"><div><p className="eyebrow">Education & learning</p><h2 className="mt-4 text-4xl font-semibold tracking-tight">Building the technical foundation behind the products.</h2><div className="mt-10 card p-7"><h3 className="text-xl font-semibold">BCA — Arka Jain University</h3><p className="mt-2 text-sm text-white/45">2025 — Expected 2028</p><p className="mt-5 text-sm leading-7 text-white/50">Current learning across programming, databases, software development, AI and cybersecurity.</p></div></div><div className="card p-7"><p className="eyebrow">Code Red</p><h3 className="mt-4 text-2xl font-semibold">Cybersecurity learning</h3><p className="mt-4 text-sm leading-7 text-white/50">A structured hands-on learning journey across web security and pentesting.</p><div className="mt-7 border-t border-white/10 pt-6"><span className="text-3xl font-semibold">92/100</span><p className="mt-1 text-xs uppercase tracking-wider text-white/35">Phase 1 · SQL Injection</p></div></div></div></div></section>
-<section className="container py-28"><div className="card grid gap-8 overflow-hidden p-8 sm:p-12 lg:grid-cols-[1.3fr_.7fr] lg:items-end"><div><p className="eyebrow">Proof stack</p><h2 className="mt-4 text-4xl font-semibold tracking-tight">See the thinking. Then inspect the build.</h2><p className="mt-5 max-w-2xl leading-7 text-white/50">The portfolio is designed to connect product claims to case studies, repositories and professional profiles rather than relying on buzzwords.</p></div><div className="flex flex-wrap gap-3 lg:justify-end"><a href="https://github.com/atelierog" className="rounded-full bg-white px-5 py-3 text-sm font-bold text-black">GitHub ↗</a><a href="https://www.linkedin.com/in/rahul-kumar-462078348" className="rounded-full border border-white/15 px-5 py-3 text-sm font-semibold">LinkedIn ↗</a></div></div></section>
-<footer id="contact" className="border-t border-white/10"><div className="container flex flex-col gap-8 py-16 sm:flex-row sm:items-end sm:justify-between"><div><p className="eyebrow">Let’s build something useful.</p><h2 className="mt-4 text-3xl font-semibold">Rahul Kumar</h2><p className="mt-2 text-sm text-white/40">Jamshedpur, Jharkhand, India</p></div><div className="flex flex-wrap gap-5 text-sm text-white/55"><a href="mailto:atelierog.co@gmail.com">Email</a><a href="https://www.linkedin.com/in/rahul-kumar-462078348">LinkedIn</a><a href="https://github.com/atelierog">GitHub</a></div></div></footer>
-</main>}
+
+const products = [
+  { number: "01", name: "Digital Menu", category: "RESTAURANTS & HOSPITALITY", description: "A mobile-first menu and QR experience designed to make browsing, discovery and ordering simpler.", status: "In development", mark: "MENU", tone: "menu" },
+  { number: "02", name: "Gym Manager", category: "FITNESS & MEMBERSHIP BUSINESSES", description: "A mobile-first operations system for memberships, attendance, renewals and day-to-day gym management.", status: "In development", mark: "GM", tone: "gym" },
+  { number: "03", name: "QR Management", category: "CUSTOMER & BUSINESS WORKFLOWS", description: "Practical QR-based experiences that connect customers to the right information and business touchpoints.", status: "Concept / development", mark: "QR", tone: "qr" },
+];
+
+const principles = [
+  ["01", "Understand first", "We start by learning how your business works and where the friction really is."],
+  ["02", "Keep it practical", "We recommend the simplest useful solution instead of adding technology for its own sake."],
+  ["03", "Build with care", "We focus on clear workflows, dependable foundations and thoughtful user experiences."],
+  ["04", "Improve together", "We learn from feedback and refine the solution as your needs evolve."],
+];
+
+export default function Home() {
+  return (
+    <main id="top">
+      <header className="site-header">
+        <div className="site-nav-wrap">
+          <a className="wordmark" href="#top" aria-label="Atelier OG home"><span>ATELIER</span><b>OG</b><i>®</i></a>
+          <nav className="desktop-nav" aria-label="Main navigation">
+            <a href="#services">Services</a><a href="#products">Products</a><a href="#approach">Our approach</a><a href="#about">About</a>
+          </nav>
+          <a className="nav-cta" href="mailto:atelierog@gmail.com?subject=Business%20Enquiry%20-%20Atelier%20OG">Let’s talk <span>↗</span></a>
+          <details className="mobile-nav">
+            <summary aria-label="Open navigation"><span></span><span></span></summary>
+            <nav aria-label="Mobile navigation"><a href="#services">Services</a><a href="#products">Products</a><a href="#approach">Our approach</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+          </details>
+        </div>
+      </header>
+
+      <section className="hero">
+        <div className="hero-grid" aria-hidden="true"></div>
+        <div className="hero-glow" aria-hidden="true"></div>
+        <div className="hero-inner">
+          <div className="hero-copy">
+            <p className="eyebrow"><span className="eyebrow-line"></span> INDEPENDENT TECHNOLOGY STUDIO · INDIA</p>
+            <h1>Make your business<br />work <em>smarter.</em></h1>
+            <p className="hero-description">We design useful digital experiences, build practical business tools and simplify everyday operations through technology.</p>
+            <div className="hero-actions">
+              <a className="button button-primary" href="#services">Explore what we do <span>↗</span></a>
+              <a className="text-link" href="mailto:atelierog@gmail.com?subject=Let%27s%20build%20something%20useful">Start a conversation <span>→</span></a>
+            </div>
+            <div className="hero-note"><span className="status-dot"></span> Thoughtful solutions. Built around real business needs.</div>
+          </div>
+          <div className="hero-visual" aria-label="Abstract illustration of connected business systems">
+            <div className="visual-orbit orbit-a"></div><div className="visual-orbit orbit-b"></div>
+            <div className="visual-core"><span className="core-top">ATELIER</span><strong>OG</strong><span className="core-bottom">IDEAS INTO SYSTEMS</span></div>
+            <div className="visual-node node-one"><span className="node-icon">✳</span><span>DESIGN</span></div>
+            <div className="visual-node node-two"><span className="node-icon">▦</span><span>DATA</span></div>
+            <div className="visual-node node-three"><span className="node-icon">⌘</span><span>DIGITAL</span></div>
+            <div className="visual-node node-four"><span className="node-icon">↗</span><span>SYSTEMS</span></div>
+            <div className="visual-cross cross-one"></div><div className="visual-cross cross-two"></div>
+          </div>
+        </div>
+        <div className="hero-bottom"><span>JAMSHEDPUR, INDIA</span><span>DESIGN · DIGITAL · DATA · AUTOMATION</span><span>EST. 2026</span></div>
+      </section>
+
+      <section className="intro section-shell">
+        <div className="section-kicker">01 / WHAT WE DO</div>
+        <div className="intro-content"><h2>Good technology should make work <em>feel simpler.</em></h2><div className="intro-aside"><p>Every business has tasks that take too long, information that gets lost and customer experiences that could be better. We help turn those everyday challenges into clear, usable solutions.</p><a className="text-link dark-link" href="#approach">How we work <span>→</span></a></div></div>
+      </section>
+
+      <section id="services" className="services-section section-shell">
+        <div className="section-topline"><div><div className="section-kicker">02 / OUR CAPABILITIES</div><h2>What we can <em>help with.</em></h2></div><p>From a single digital asset to a connected business workflow, start with the problem you need to solve.</p></div>
+        <div className="service-grid">{services.map((service) => (
+          <article className="service-card" key={service.number}>
+            <div className="service-card-top"><span>{service.number}</span><span className="service-arrow">↗</span></div>
+            <h3>{service.title}</h3><p>{service.description}</p>
+            <ul>{service.items.map((item) => <li key={item}><span>＋</span>{item}</li>)}</ul>
+            <a href={`mailto:atelierog@gmail.com?subject=${encodeURIComponent("Enquiry - " + service.title)}`} className="card-link">Discuss this service <span>→</span></a>
+          </article>
+        ))}</div>
+      </section>
+
+      <section id="products" className="products-section section-shell">
+        <div className="section-topline"><div><div className="section-kicker">03 / OUR PRODUCTS</div><h2>Tools we’re <em>building.</em></h2></div><p>We are developing focused software products for specific business needs. Product availability will be announced as each product is ready.</p></div>
+        <div className="product-list">{products.map((product) => (
+          <article className="product-row" key={product.number}>
+            <div className={`product-art ${product.tone}`}><div className="product-art-grid"></div><span>{product.mark}</span><i></i></div>
+            <div className="product-info"><div className="product-meta"><span>{product.number} / {product.category}</span><span className="product-status"><i></i>{product.status}</span></div><h3>{product.name}</h3><p>{product.description}</p></div>
+            <a className="product-enquire" href={`mailto:atelierog@gmail.com?subject=${encodeURIComponent("Product enquiry - " + product.name)}`} aria-label={`Enquire about ${product.name}`}>↗</a>
+          </article>
+        ))}</div>
+      </section>
+
+      <section id="approach" className="approach-section section-shell">
+        <div className="approach-heading"><div className="section-kicker">04 / OUR APPROACH</div><h2>Clarity before<br /><em>complexity.</em></h2><p>We believe the best solution is not the one with the most features. It is the one that solves the right problem and fits the way people work.</p></div>
+        <div className="principle-list">{principles.map((item) => <article className="principle" key={item[0]}><span>{item[0]}</span><div><h3>{item[1]}</h3><p>{item[2]}</p></div><b>↗</b></article>)}</div>
+      </section>
+
+      <section id="about" className="about-section section-shell">
+        <div className="section-kicker">05 / ABOUT ATELIER OG</div>
+        <div className="about-content"><div><h2>A small studio mindset.<br /><em>A systems-level view.</em></h2></div><div className="about-copy"><p>Atelier OG is an independent technology studio founded in 2026. We bring together design, data, digital tools and business automation to help organisations work with greater clarity.</p><p>We are building a growing portfolio of practical services and focused software products. Our starting point is always the same: understand the people, understand the process, then build what is genuinely useful.</p><div className="founder-line"><span className="founder-avatar">RK</span><div><strong>Rahul Kumar</strong><small>Founder, Atelier OG</small></div></div></div></div>
+      </section>
+
+      <section id="contact" className="contact-section section-shell">
+        <div className="contact-orb" aria-hidden="true"></div>
+        <div className="section-kicker">06 / START A CONVERSATION</div>
+        <div className="contact-content"><div><h2>Have a business<br />challenge? <em>Let’s talk.</em></h2><p>Tell us what you’re trying to improve. We’ll help you explore a practical next step.</p></div><a className="contact-button" href="mailto:atelierog@gmail.com?subject=Business%20Enquiry%20-%20Atelier%20OG"><span>atelierog@gmail.com</span><b>↗</b></a></div>
+      </section>
+
+      <footer className="site-footer"><div className="footer-main"><a className="wordmark footer-wordmark" href="#top"><span>ATELIER</span><b>OG</b><i>®</i></a><p>Technology that moves<br />business forward.</p><div className="footer-links"><a href="#services">Services</a><a href="#products">Products</a><a href="#about">About</a><a href="mailto:atelierog@gmail.com">Contact</a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Atelier OG. All rights reserved.</span><span>Jamshedpur, Jharkhand, India</span><a href="#top">Back to top ↑</a></div></footer>
+    </main>
+  );
+}
