@@ -27,7 +27,7 @@ export default function Home() {
           <nav className="desktop-nav" aria-label="Main navigation">
             <a href="#services">Services</a><a href="#products">Products</a><a href="#approach">Our approach</a><a href="#about">About</a>
           </nav>
-          <a className="nav-cta" href="mailto:atelierog@gmail.com?subject=Business%20Enquiry%20-%20Atelier%20OG">Let’s talk <span>↗</span></a>
+          <a className="nav-cta" href="mailto:atelierog.co@gmail.com?subject=Business%20Enquiry%20-%20Atelier%20OG">Let’s talk <span>↗</span></a>
           <details className="mobile-nav">
             <summary aria-label="Open navigation"><span></span><span></span></summary>
             <nav aria-label="Mobile navigation"><a href="#services">Services</a><a href="#products">Products</a><a href="#approach">Our approach</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
@@ -45,7 +45,7 @@ export default function Home() {
             <p className="hero-description">We design useful digital experiences, build practical business tools and simplify everyday operations through technology.</p>
             <div className="hero-actions">
               <a className="button button-primary" href="#services">Explore what we do <span>↗</span></a>
-              <a className="text-link" href="mailto:atelierog@gmail.com?subject=Let%27s%20build%20something%20useful">Start a conversation <span>→</span></a>
+              <a className="text-link" href="mailto:atelierog.co@gmail.com?subject=Let%27s%20build%20something%20useful">Start a conversation <span>→</span></a>
             </div>
             <div className="hero-note"><span className="status-dot"></span> Thoughtful solutions. Built around real business needs.</div>
           </div>
@@ -74,7 +74,7 @@ export default function Home() {
             <div className="service-card-top"><span>{service.number}</span><span className="service-arrow">↗</span></div>
             <h3>{service.title}</h3><p>{service.description}</p>
             <ul>{service.items.map((item) => <li key={item}><span>＋</span>{item}</li>)}</ul>
-            <a href={`mailto:atelierog@gmail.com?subject=${encodeURIComponent("Enquiry - " + service.title)}`} className="card-link">Discuss this service <span>→</span></a>
+            <a href={`mailto:atelierog.co@gmail.com?subject=${encodeURIComponent("Enquiry - " + service.title)}`} className="card-link">Discuss this service <span>→</span></a>
           </article>
         ))}</div>
       </section>
@@ -85,7 +85,7 @@ export default function Home() {
           <article className="product-row" key={product.number}>
             <div className={`product-art ${product.tone}`}><div className="product-art-grid"></div><span>{product.mark}</span><i></i></div>
             <div className="product-info"><div className="product-meta"><span>{product.number} / {product.category}</span><span className="product-status"><i></i>{product.status}</span></div><h3>{product.name}</h3><p>{product.description}</p></div>
-            <a className="product-enquire" href={`mailto:atelierog@gmail.com?subject=${encodeURIComponent("Product enquiry - " + product.name)}`} aria-label={`Enquire about ${product.name}`}>↗</a>
+            <a className="product-enquire" href={`mailto:atelierog.co@gmail.com?subject=${encodeURIComponent("Product enquiry - " + product.name)}`} aria-label={`Enquire about ${product.name}`}>↗</a>
           </article>
         ))}</div>
       </section>
@@ -103,10 +103,10 @@ export default function Home() {
       <section id="contact" className="contact-section section-shell">
         <div className="contact-orb" aria-hidden="true"></div>
         <div className="section-kicker">06 / START A CONVERSATION</div>
-        <div className="contact-content"><div><h2>Have a business<br />challenge? <em>Let’s talk.</em></h2><p>Tell us what you’re trying to improve. We’ll help you explore a practical next step.</p></div><a className="contact-button" href="mailto:atelierog@gmail.com?subject=Business%20Enquiry%20-%20Atelier%20OG"><span>atelierog@gmail.com</span><b>↗</b></a></div>
+        <div className="contact-content"><div><h2>Have a business<br />challenge? <em>Let’s talk.</em></h2><p>Tell us what you’re trying to improve. We’ll help you explore a practical next step.</p></div><a className="contact-button" href="mailto:atelierog.co@gmail.com?subject=Business%20Enquiry%20-%20Atelier%20OG"><span>atelierog.co@gmail.com</span><b>↗</b></a></div>
       </section>
 
-      <footer className="site-footer"><div className="footer-main"><a className="wordmark footer-wordmark" href="#top"><span>ATELIER</span><b>OG</b><i>®</i></a><p>Technology that moves<br />business forward.</p><div className="footer-links"><a href="#services">Services</a><a href="#products">Products</a><a href="#about">About</a><a href="mailto:atelierog@gmail.com">Contact</a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Atelier OG. All rights reserved.</span><span>Jamshedpur, Jharkhand, India</span><a href="#top">Back to top ↑</a></div></footer>
+      <footer className="site-footer"><div className="footer-main"><a className="wordmark footer-wordmark" href="#top"><span>ATELIER</span><b>OG</b><i>®</i></a><p>Technology that moves<br />business forward.</p><div className="footer-links"><a href="#services">Services</a><a href="#products">Products</a><a href="#about">About</a><a href="mailto:atelierog.co@gmail.com">Contact</a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Atelier OG. All rights reserved.</span><span>Jamshedpur, Jharkhand, India</span><a href="#top">Back to top ↑</a></div></footer>
     </main>
   );
 }
