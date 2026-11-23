@@ -169,3 +169,33 @@ button,a,summary{-webkit-tap-highlight-color:transparent}
 @media(max-width:760px){html{scroll-padding-top:70px}.header{height:68px;padding:0 20px}.nav,.header-cta{display:none}.mobile-menu{display:block;position:relative}.mobile-menu summary{list-style:none;width:40px;height:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:1px solid #aeb7be}.mobile-menu summary::-webkit-details-marker{display:none}.mobile-menu summary i{width:16px;height:1px;background:#293139}.mobile-menu nav{position:absolute;right:0;top:49px;width:220px;padding:10px;background:#edf0f2;border:1px solid #c3cbd1;box-shadow:0 15px 30px #1c252d24;display:grid}.mobile-menu nav a{padding:13px 9px;border-bottom:1px solid #d5dbe0;font-size:12px}.hero-inner{width:calc(100% - 40px);grid-template-columns:1fr;padding:62px 0 70px;gap:40px}.hero h1{font-size:clamp(55px,12vw,78px);margin:30px 0 20px}.hero-lede{font-size:14px}.hero-proof{margin-top:38px;font-size:7px;flex-wrap:wrap}.hero-stage{height:350px}.hero-index{padding:13px 20px;font-size:7px}.section-pad{padding:76px 20px}.section-label{font-size:8px;gap:12px}.section-label span:last-child{text-align:right}.studio-grid,.section-heading,.approach-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:28px}.studio-grid{margin-top:38px}.studio h2,.section-pad h2{font-size:clamp(42px,10vw,58px)}.studio-statline{gap:10px;margin-top:45px}.studio-statline div{align-items:flex-start;flex-direction:column;gap:7px}.studio-statline span{font-size:9px}.section-heading{margin:36px 0}.section-heading>p{font-size:12px}.capability summary{grid-template-columns:34px 1fr 25px;gap:10px;padding:22px 0}.cap-keywords{display:none}.cap-title{font-size:20px}.cap-detail{grid-template-columns:1fr;padding:0 0 25px 44px;gap:16px}.cap-visual{grid-column:1;grid-row:auto;min-height:110px}.cap-detail>a{grid-column:1}.product-feature,.product-feature.reverse{grid-template-columns:1fr;gap:25px;padding:42px 0}.product-feature.reverse .product-copy,.product-feature.reverse .device-wrap{order:initial;padding-left:0}.product-copy h3{font-size:54px}.device-wrap{min-height:320px}.tablet-device{height:250px}.product-footnote{grid-template-columns:1fr 1fr}.product-footnote a{grid-column:1/-1;justify-self:start}.approach-grid,.about-grid{margin-top:38px}.contact-grid{margin-top:38px}.contact-top{font-size:7px}.contact-grid>div p{font-size:12px}.footer{padding:35px 20px 18px}.footer-top{grid-template-columns:1fr 1fr;gap:25px}.footer-top nav{grid-column:1/-1;justify-content:flex-start}.footer-bottom{flex-wrap:wrap;font-size:8px}}
 @media(max-width:420px){.hero-stage{height:300px}.stage-top,.stage-bottom{left:12px;right:12px;font-size:6px}.stage-halo{width:280px;height:280px}.stage-core{width:78px;height:78px}.stage-core span{font-size:23px}.hero-index{font-size:6px}.eyebrow{font-size:7px;letter-spacing:.12em}.eyebrow-index{display:none}.hero-actions{gap:18px}.button-dark{padding:14px 15px}.studio-statline span{font-size:8px}.footer-bottom span:nth-child(2){display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marquee-track{animation:none}.button-dark{transition:none}}
+
+
+/* Atelier OG cinematic hero — lightweight CSS motion, no video/API dependency */
+.hero-stage{isolation:isolate}
+.stage-art{perspective:1100px;transform-style:preserve-3d}
+.stage-art:before,.stage-art:after{content:"";position:absolute;inset:-20%;pointer-events:none}
+.stage-art:before{z-index:3;background:linear-gradient(112deg,transparent 34%,rgba(240,246,250,.09) 46%,rgba(240,246,250,.34) 49%,rgba(240,246,250,.07) 52%,transparent 64%);transform:translateX(-75%) skewX(-12deg);animation:og-light-sweep 11s cubic-bezier(.45,0,.25,1) infinite}
+.stage-art:after{z-index:2;background:radial-gradient(ellipse at 50% 50%,transparent 30%,rgba(5,10,14,.3) 100%);animation:og-atmosphere 9s ease-in-out infinite alternate}
+.stage-halo{animation:og-halo 18s ease-in-out infinite}
+.stage-plane{transform-origin:50% 50%;animation:og-plane 16s ease-in-out infinite}
+.stage-column{transform-origin:50% 50%;animation:og-column-left 13s ease-in-out infinite}
+.column-right{animation-name:og-column-right;animation-duration:15s}
+.stage-arc{animation:og-arc 22s linear infinite}
+.stage-glass{animation:og-glass 12s ease-in-out infinite}
+.stage-core{animation:og-core 8s ease-in-out infinite}
+.stage-orbit{animation:og-orbit-one 24s linear infinite}
+.orbit-two{animation-name:og-orbit-two;animation-duration:30s}
+.stage-top,.stage-bottom{z-index:5}
+@keyframes og-light-sweep{0%,18%{transform:translateX(-78%) skewX(-12deg);opacity:0}28%{opacity:1}58%{transform:translateX(78%) skewX(-12deg);opacity:.7}72%,100%{transform:translateX(78%) skewX(-12deg);opacity:0}}
+@keyframes og-atmosphere{from{opacity:.65}to{opacity:1}}
+@keyframes og-halo{0%,100%{transform:translate(-50%,-50%) scale(.96);opacity:.65}50%{transform:translate(-50%,-50%) scale(1.06);opacity:1}}
+@keyframes og-plane{0%,100%{transform:rotate(-12deg) translate3d(-5px,4px,0)}50%{transform:rotate(-8deg) translate3d(8px,-8px,24px)}}
+@keyframes og-column-left{0%,100%{transform:skewY(-18deg) rotate(12deg) translateY(5px)}50%{transform:skewY(-15deg) rotate(9deg) translateY(-9px)}}
+@keyframes og-column-right{0%,100%{transform:skewY(16deg) rotate(-16deg) translateY(-4px)}50%{transform:skewY(13deg) rotate(-12deg) translateY(9px)}}
+@keyframes og-arc{from{transform:translate(-50%,-50%) rotate(-28deg)}to{transform:translate(-50%,-50%) rotate(332deg)}}
+@keyframes og-glass{0%,100%{transform:perspective(700px) rotateY(-25deg) rotateX(5deg);opacity:.65}50%{transform:perspective(700px) rotateY(-13deg) rotateX(1deg);opacity:1}}
+@keyframes og-core{0%,100%{transform:translate(-50%,-50%) scale(.96);filter:brightness(.9)}50%{transform:translate(-50%,-50%) scale(1.05);filter:brightness(1.18)}}
+@keyframes og-orbit-one{from{transform:translate(-50%,-50%) rotate(36deg)}to{transform:translate(-50%,-50%) rotate(396deg)}}
+@keyframes og-orbit-two{from{transform:translate(-50%,-50%) rotate(-38deg)}to{transform:translate(-50%,-50%) rotate(-398deg)}}
+@media(prefers-reduced-motion:reduce){.stage-art:before,.stage-art:after,.stage-halo,.stage-plane,.stage-column,.column-right,.stage-arc,.stage-glass,.stage-core,.stage-orbit,.orbit-two{animation:none!important}}
