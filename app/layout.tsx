@@ -2,10 +2,21 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Rahul Kumar — Product Builder | AI & SaaS",
-  description: "Rahul Kumar is an early-career product builder focused on AI, SaaS, automation and zero-to-one product development.",
-  metadataBase: new URL("https://atelierog.github.io"),
-  openGraph: { title: "Rahul Kumar — Product Builder | AI & SaaS", description: "Problem-first product thinking, hands-on building and technical execution.", type: "website" },
+  metadataBase: new URL("https://atelierog.co.in"),
+  title: "Atelier OG | Technology That Moves Business Forward",
+  description: "Atelier OG is an independent technology studio helping businesses improve design, data, digital experiences and everyday operations through practical technology.",
+  openGraph: {
+    title: "Atelier OG | Technology That Moves Business Forward",
+    description: "Thoughtful digital experiences, practical business tools and automation built around real business needs.",
+    url: "https://atelierog.co.in",
+    siteName: "Atelier OG",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Atelier OG | Technology That Moves Business Forward",
+    description: "Design, digital tools, data and business automation.",
+  },
   robots: { index: true, follow: true },
 };
 
