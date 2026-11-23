@@ -1,15 +1,15 @@
-const services = [
+const services: [string, string, string, string[]][] = [
   ["01","Design","Create a clear, consistent digital identity that helps your business look credible and communicate better.",["Brand and business creatives","Web and landing page design","Menus, catalogues and marketing assets"]],
   ["02","Excel & Data","Turn scattered information into organised, useful systems that make everyday work easier.",["Excel tools and trackers","Dashboards and reports","Data organisation and cleanup"]],
   ["03","Digital Tools","Give customers and teams simpler ways to discover, access and use your business.",["Business websites and digital presence","QR experiences and digital menus","Forms, catalogues and customer workflows"]],
   ["04","Business Automation","Reduce repetitive work with connected workflows designed around how your business actually operates.",["Workflow mapping","Process automation","Custom business systems"]],
 ];
-const products = [
+const products: [string, string, string, string, string, string, string][] = [
   ["01","Digital Menu","RESTAURANTS & HOSPITALITY","A mobile-first menu and QR experience designed to make browsing, discovery and ordering simpler.","In development","MENU","menu"],
   ["02","Gym Manager","FITNESS & MEMBERSHIP BUSINESSES","A mobile-first operations system for memberships, attendance, renewals and day-to-day gym management.","In development","GM","gym"],
   ["03","QR Management","CUSTOMER & BUSINESS WORKFLOWS","Practical QR-based experiences that connect customers to the right information and business touchpoints.","Concept / development","QR","qr"],
 ];
-const principles = [
+const principles: [string, string, string][] = [
   ["01","Understand first","We start by learning how your business works and where the friction really is."],
   ["02","Keep it practical","We recommend the simplest useful solution instead of adding technology for its own sake."],
   ["03","Build with care","We focus on clear workflows, dependable foundations and thoughtful user experiences."],
